@@ -1,0 +1,16 @@
+menu "Air Quality Sensor Configuration"
+
+  config AIR_QUALITY_SENSOR_IO_NUM
+      int "ADC IO Number"
+      default 2
+      help
+          Set the IO number for the air quality sensor.
+  
+  config AIR_QUALITY_SENSOR_ADC_NUM
+      int "ADC Unit Number [0-1]"
+      default 0
+      help
+          Set the ADC unit number for the air quality sensor. ADC_UNIT_1 = 0, ADC_UNIT_2 = 1
+  
+  endmenu
+  

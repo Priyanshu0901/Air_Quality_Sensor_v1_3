@@ -33,32 +33,33 @@
 
 typedef enum air_quality_status
 {
-    FORCE_SIGNAL = 0,
-    HIGH_POLLUTION = 1,
-    LOW_POLLUTION = 2,
-    FRESH_AIR = 3,
-    INVALID = -1,
+  FORCE_SIGNAL = 0,
+  HIGH_POLLUTION = 1,
+  LOW_POLLUTION = 2,
+  FRESH_AIR = 3,
+  INVALID = -1,
 } air_quality_status_e;
 
 typedef struct air_quality_sensor
 {
-    uint8_t _is_initialized;
-    adc_channel_t _io_num;
-    adc_unit_t _adc_num;
-    air_quality_status_e _air_quality;
-    adc_oneshot_unit_handle_t _adc_handle;
-    int _sensor_raw_value;
-    int _lastVoltage;
-    int _currentVoltage;
-    uint32_t _voltageSum;
-    int _standardVoltage;
-    int _volSumCount;
-    uint32_t _lastStdVolUpdated;
+  uint8_t _is_initialized;
+  adc_channel_t _io_num;
+  adc_unit_t _adc_num;
+  air_quality_status_e _air_quality;
+  adc_oneshot_unit_handle_t _adc_handle;
+  bool _sensor_ready;
+  int _sensor_raw_value;
+  int _lastVoltage;
+  int _currentVoltage;
+  uint32_t _voltageSum;
+  int _standardVoltage;
+  int _volSumCount;
+  uint32_t _lastStdVolUpdated;
 } air_quality_sensor_t;
 
 bool initialize_air_quality_sensor(air_quality_sensor_t *);
 int air_quality_sensor_slope(air_quality_sensor_t *);
 int air_quality_sensor_get_value(air_quality_sensor_t *);
-void air_quality_error_to_message(air_quality_status_e,char*,size_t);
+void air_quality_error_to_message(air_quality_status_e, char *, size_t);
 
 #endif // AIR_QUALITY_SENSOR_H

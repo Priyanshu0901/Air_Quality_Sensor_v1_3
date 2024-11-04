@@ -1770,6 +1770,13 @@ CONFIG_WIFI_PROV_AUTOSTOP_TIMEOUT=30
 CONFIG_WIFI_PROV_STA_ALL_CHANNEL_SCAN=y
 # CONFIG_WIFI_PROV_STA_FAST_SCAN is not set
 # end of Wi-Fi Provisioning Manager
+
+#
+# Air Quality Sensor Configuration
+#
+CONFIG_AIR_QUALITY_SENSOR_IO_NUM=2
+CONFIG_AIR_QUALITY_SENSOR_ADC_NUM=0
+# end of Air Quality Sensor Configuration
 # end of Component config
 
 # CONFIG_IDF_EXPERIMENTAL_FEATURES is not set
